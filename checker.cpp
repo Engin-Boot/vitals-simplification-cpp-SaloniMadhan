@@ -13,7 +13,7 @@ bool check_respRate(float respRate)
  return !(respRate < 30 || respRate > 95);
 }
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  return !(check_bpm(bpm) || check_spo2(spo2) || check_respRate(respRate)); 
+  return (check_bpm(bpm) && check_spo2(spo2) && check_respRate(respRate)); 
 }
   /*if(bpm < 70 || bpm > 150) {
     return false;
