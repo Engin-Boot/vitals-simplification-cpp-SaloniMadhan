@@ -13,9 +13,7 @@ bool check_respRate(float respRate)
  return !(respRate < 30 || respRate > 95);
 }
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  check_bpm(bpm);
-  check_spo2(spo2);
-  check_respRate(respRate);
+  return !(check_bpm(bpm) || check_spo2(spo2) || check_respRate(respRate)); 
 }
   /*if(bpm < 70 || bpm > 150) {
     return false;
@@ -24,8 +22,8 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   } else if(respRate < 30 || respRate > 95) {
     return false;
   }
-  return true;*/
-}
+  return true;
+}*/
 
 int main() {
   assert(vitalsAreOk(80, 95, 60) == true);
