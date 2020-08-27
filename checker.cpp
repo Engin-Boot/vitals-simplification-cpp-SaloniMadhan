@@ -12,15 +12,7 @@ bool check_respRate(float respRate)
 {
  return !(respRate < 30 || respRate > 95);
 }*/
-
-bool isInsideRange(float value,float lowerLimit,float upperLimit)
-{
-  return (value < lowerLimit && value > upperLimit)
-}
-bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  return isInsideRange(bpm,70,150) && isInsideRange(spo2,90,100) &&isInsideRange(respRate,30,95);
-}
-  /*if(bpm < 70 || bpm > 150) {
+/*if(bpm < 70 || bpm > 150) {
     return false;
   } else if(spo2 < 90) {
     return false;
@@ -29,7 +21,14 @@ bool vitalsAreOk(float bpm, float spo2, float respRate) {
   }
   return true;
 }*/
-
+bool isInsideRange(float value,float lowerLimit,float upperLimit)
+{
+  return (value < lowerLimit && value > upperLimit);
+}
+bool vitalsAreOk(float bpm, float spo2, float respRate) {
+  return isInsideRange(bpm,70,150) && isInsideRange(spo2,90,100) &&isInsideRange(respRate,30,95);
+}
+  
 int main() {
   assert(vitalsAreOk(80, 95, 60) == true);
   assert(vitalsAreOk(60, 90, 40) == false);
