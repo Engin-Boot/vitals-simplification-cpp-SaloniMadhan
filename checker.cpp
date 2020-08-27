@@ -26,7 +26,7 @@ bool isInsideRange(float value,float lowerLimit,float upperLimit)
   return (value < lowerLimit && value > upperLimit);
 }
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  return isInsideRange(bpm,70,150) && isInsideRange(spo2,90,100) &&isInsideRange(respRate,30,95);
+  return (isInsideRange(bpm,70,150) && isInsideRange(spo2,90,100) && isInsideRange(respRate,30,95));
 }
   
 int main() {
